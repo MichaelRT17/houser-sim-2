@@ -23,6 +23,7 @@ class Step2 extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <div>
