@@ -45,6 +45,8 @@ class Dashboard extends Component {
                 <Link to='/wizard/step1'>
                     <button>Add New Property</button>
                 </Link>
+                <hr />
+                <h3>Home Listings</h3>
                 {mappedHouses}
             </div>
         )

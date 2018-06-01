@@ -8,18 +8,18 @@ class Step2 extends Component {
         super(props);
 
         this.state = {
-            imageUrl: ''
+            img: ''
         }
     }
 
     componentDidMount() {
         this.setState({
-            imageUrl: this.props.imageUrl
+            img: this.props.img
         })
     }
 
     handleClick() {
-        this.props.stepTwo(this.state.imageUrl)
+        this.props.stepTwo(this.state)
     }
 
     render() {
@@ -27,7 +27,7 @@ class Step2 extends Component {
             <div>
                 <div>
                     <h3>Image URL</h3>
-                    <input type='text' value={this.state.imageUrl} onChange={e => this.setState({ imageUrl: e.target.value })} />
+                    <input type='text' value={this.state.img} onChange={e => this.setState({ img: e.target.value })} />
                 </div>
                 <Link to='/wizard/step1' >
                     <button onClick={() => this.handleClick()}>Previous Step</button>
@@ -42,7 +42,7 @@ class Step2 extends Component {
 
 function mapStateToProps(state) {
     return {
-        imageUrl: state.imageUrl
+        img: state.img
     }
 }
 

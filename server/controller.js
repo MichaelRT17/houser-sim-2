@@ -10,9 +10,9 @@ module.exports = {
 
     createHouse: (req, res, next) => {
         const db = req.app.get('db');
-        const { name, address, city, state, zip } = req.body;
+        const { name, address, city, state, zip, img, mortgage, rent } = req.body;
 
-        db.create_house([name, address, city, state, zip])
+        db.create_house([name, address, city, state, zip, img, mortgage, rent])
             .then(() => res.status(200).send())
             .catch(() => res.status(500).send());
     },
@@ -23,6 +23,6 @@ module.exports = {
         db.delete_house([req.params.id])
             .then(() => res.status(200).send())
             .catch(() => res.status(500).send());
-    },
+    },  
     
 }

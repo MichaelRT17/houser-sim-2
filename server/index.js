@@ -7,6 +7,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.static('./build'));
 
 app.get('/api/houses', ctrl.showHouses);
 app.post('/api/createHouse', ctrl.createHouse);

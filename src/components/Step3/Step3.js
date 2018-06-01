@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { stepThree } from '../../ducks/reducer';
+import { stepThree, cancel } from '../../ducks/reducer';
 
 class Step3 extends Component {
     constructor() {
@@ -33,15 +33,20 @@ class Step3 extends Component {
 
     newHouse() {
         axios.post('/api/createHouse', {
-            name: this.state.name,
-            address: this.state.address,
-            city: this.state.city,
-            state: this.state.state,
-            zip: this.state.zipcode
+            name: this.props.name,
+            address: this.props.address,
+            city: this.props.city,
+            state: this.props.state,
+            zip: this.props.zip,
+            img: this.props.img,
+            mortgage: this.state.mortgage,
+            rent: this.state.rent
         })
             .then(() => this.setState({
                 redirect: true
-            }))
+            }),
+            this.props.cancel()
+        )
     }
 
     handleClick() {
@@ -81,10 +86,10 @@ function mapStateToProps(state) {
         city: state.city,
         state: state.state,
         zip: state.zip,
-        imageUrl: state.imageUrl,
+        img: state.img,
         mortgage: state.mortgage,
         rent: state.rent
     }
 }
 
-export default connect(mapStateToProps, { stepThree })(Step3);
+export default connect(mapStateToProps, { stepThree, cancel })(Step3);
