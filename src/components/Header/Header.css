@@ -1,3 +1,6 @@
 .header {
-    background-color: #519872
+    background-color: #519872;
+    font-style: bold;
+    color: white;
+    overflow: hidden;
 }

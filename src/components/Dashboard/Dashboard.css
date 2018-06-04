@@ -1,0 +1,11 @@
+#newProp {
+    height: 40px;
+    width: 200px;
+    background-color: #8AEA92;
+    font-size: 20px;
+}
+
+.dash {
+    background-color: #E5F4EC;
+    overflow: hidden;
+}

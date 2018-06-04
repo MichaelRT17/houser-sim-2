@@ -1,0 +1,14 @@
+.parentdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 250px;
+    padding: 0 20px;
+    background-color: #DEDEDE;
+}
+
+.childdiv {
+    background-color: #DEDEDE;
+    margin: 10px 0;
+}

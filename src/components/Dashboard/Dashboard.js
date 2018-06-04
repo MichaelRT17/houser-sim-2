@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './Dashboard.css'
+
 
 import House from '../House/House';
 
@@ -40,10 +42,10 @@ class Dashboard extends Component {
             )
         })
         return (
-            <div>
+            <div className='dash'>
                 <h1>Dashboard</h1>
                 <Link to='/wizard/step1'>
-                    <button>Add New Property</button>
+                    <button id='newProp'>Add New Property</button>
                 </Link>
                 <hr />
                 <h3>Home Listings</h3>
